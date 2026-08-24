@@ -74,6 +74,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -95,6 +99,31 @@ button, input, select {
   font-size: inherit;
   border: none;
   outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 3000;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .container {
@@ -396,6 +425,15 @@ button, input, select {
   color: var(--color-gold-light);
   margin-bottom: 1.5rem;
   backdrop-filter: blur(8px);
+}
+
+.portfolio-kicker {
+  margin-bottom: 0.8rem;
+  color: var(--color-gold-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .badge-dot {
@@ -1396,7 +1434,7 @@ button, input, select {
   line-height: 1.8;
 }
 
-.footer-nav h4, .footer-legal h4 {
+.footer-nav h2, .footer-legal h2 {
   font-family: var(--font-serif);
   font-size: 1.1rem;
   color: var(--color-gold-light);
@@ -1569,6 +1607,23 @@ button, input, select {
   margin-bottom: 0.8rem;
 }
 
+.modal-demo-note {
+  margin-top: -0.8rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.copy-feedback {
+  display: block;
+  min-height: 1.2rem;
+  margin-top: 0.35rem;
+  color: var(--color-accent-teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .message-bubble {
   background: #E7F8ED;
   border-radius: var(--radius-md);
@@ -1589,14 +1644,6 @@ button, input, select {
 
 /* --- 18. RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
-  .booking-form {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .form-submit {
-    grid-column: span 2;
-  }
-  
   .perks-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1620,6 +1667,14 @@ button, input, select {
 
 /* --- Breakpoint intermediário: preserva o respiro da marca e abre menu responsivo --- */
 @media (max-width: 1180px) {
+  .booking-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-submit {
+    grid-column: span 2;
+  }
+
   .nav-menu {
     position: fixed;
     top: 0;

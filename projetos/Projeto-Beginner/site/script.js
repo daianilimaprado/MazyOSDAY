@@ -1,12 +1,9 @@
 /**
  * VIENTO DEL CARIBE — LUXURY BEACH RESORT & SPA
- * Interações e Link Inteligente do WhatsApp (Vanilla JavaScript)
+ * Interações e preview demonstrativo da mensagem (Vanilla JavaScript)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Número de WhatsApp demonstrativo (Placeholder sem dados reais)
-  const WHATSAPP_PHONE = '5511999999999';
-
   // Elementos do DOM
   const header = document.getElementById('main-header');
   const mobileToggle = document.getElementById('mobile-toggle');
@@ -38,9 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCancel = document.getElementById('btn-modal-cancel');
   const modalConfirm = document.getElementById('btn-modal-confirm');
   const modalMessageText = document.getElementById('modal-message-text');
+  const copyFeedback = document.getElementById('copy-feedback');
 
   let adults = 2;
   let childAges = [];
+  let lastFocusedElement = null;
 
   /* ==========================================
      1. INICIALIZAÇÃO DE DATAS AUTOMÁTICAS
@@ -232,23 +231,52 @@ Poderiam me informar os valores para este período e os benefícios exclusivos d
   }
 
   function openWhatsAppPreview(messageText) {
-    const encodedMessage = encodeURIComponent(messageText);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
-
-    if (modal && modalMessageText && modalConfirm) {
+    if (modal && modalMessageText) {
+      lastFocusedElement = document.activeElement;
       modalMessageText.textContent = messageText;
-      modalConfirm.href = whatsappUrl;
+      if (copyFeedback) copyFeedback.textContent = '';
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
-    } else {
-      window.open(whatsappUrl, '_blank');
+      document.body.classList.add('modal-open');
+      if (modalClose) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => modalClose.focus({ preventScroll: true }));
+        });
+      }
     }
   }
 
   function closeModal() {
-    if (modal) {
+    if (modal && modal.classList.contains('active')) {
       modal.classList.remove('active');
       modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+  }
+
+  async function copyPreviewMessage() {
+    const message = modalMessageText ? modalMessageText.textContent : '';
+    if (!message) return;
+
+    try {
+      await navigator.clipboard.writeText(message);
+      if (copyFeedback) copyFeedback.textContent = 'Mensagem copiada.';
+    } catch (error) {
+      const textArea = document.createElement('textarea');
+      textArea.value = message;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
+      if (copyFeedback) {
+        copyFeedback.textContent = copied ? 'Mensagem copiada.' : 'Não foi possível copiar automaticamente.';
+      }
     }
   }
 
@@ -338,7 +366,9 @@ Poderiam me informar os valores para este período e os benefícios exclusivos d
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       mobileToggle.classList.toggle('active');
-      mobileToggle.setAttribute('aria-expanded', String(navMenu.classList.contains('active')));
+      const isOpen = navMenu.classList.contains('active');
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      mobileToggle.setAttribute('aria-label', isOpen ? 'Fechar menu mobile' : 'Abrir menu mobile');
     });
 
     navLinks.forEach(link => {
@@ -346,6 +376,7 @@ Poderiam me informar os valores para este período e os benefícios exclusivos d
         navMenu.classList.remove('active');
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Abrir menu mobile');
       });
     });
   }
@@ -355,6 +386,7 @@ Poderiam me informar os valores para este período e os benefícios exclusivos d
      ========================================== */
   if (modalClose) modalClose.addEventListener('click', closeModal);
   if (modalCancel) modalCancel.addEventListener('click', closeModal);
+  if (modalConfirm) modalConfirm.addEventListener('click', copyPreviewMessage);
   
   if (modal) {
     modal.addEventListener('click', (e) => {
@@ -370,6 +402,30 @@ Poderiam me informar os valores para este período e os benefícios exclusivos d
 
     if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closeModal();
+    }
+
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.setAttribute('aria-label', 'Abrir menu mobile');
+      mobileToggle.focus();
+    }
+
+    if (e.key === 'Tab' && modal && modal.classList.contains('active')) {
+      const focusable = [...modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')]
+        .filter(element => !element.disabled && element.getClientRects().length > 0);
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 });

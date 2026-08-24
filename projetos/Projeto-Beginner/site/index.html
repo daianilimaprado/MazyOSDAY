@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viento del Caribe | Luxury Beach Resort & Spa — Punta Cana</title>
-  <meta name="description" content="Resort cinco estrelas de alto padrão em Punta Cana. Suítes exclusivas frente ao mar, alta gastronomia, spa e reservas diretas sem taxas.">
+  <title>Viento del Caribe | Projeto Conceitual — Portfólio Lima & Prado</title>
+  <meta name="description" content="Projeto conceitual de um resort de luxo fictício em Punta Cana, criado pela Lima & Prado como demonstração de site hoteleiro de alta conversão.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
   <!-- ==================== HEADER NAVEGAÇÃO ==================== -->
   <header id="main-header" class="header">
     <div class="container header-container">
-      <a href="#" class="brand-logo" aria-label="Viento del Caribe Home">
+      <a href="#resort" class="brand-logo" aria-label="Viento del Caribe — início">
         <span class="logo-name">VIENTO DEL CARIBE</span>
         <span class="logo-type">LUXURY BEACH RESORT &amp; SPA</span>
         <span class="logo-location">
@@ -54,7 +55,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- ==================== HERO SECTION ==================== -->
     <section id="resort" class="hero-section">
       <div class="hero-backdrop">
@@ -62,6 +63,7 @@
       </div>
       
       <div class="container hero-content">
+        <p class="portfolio-kicker">PROJETO CONCEITUAL • PORTFÓLIO LIMA &amp; PRADO</p>
         <div class="hero-badge">
           <span class="badge-dot"></span>
           <span>PUNTA CANA • REPÚBLICA DOMINICANA</span>
@@ -113,12 +115,12 @@
 
             <!-- GUEST PICKER -->
             <div class="form-group guest-picker-group" id="guest-picker-group">
-              <label>
+              <label id="guest-label">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 <span>Hóspedes</span>
               </label>
               <!-- Botão de resumo fechado -->
-              <button type="button" class="guest-trigger" id="guest-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="guest-panel">
+              <button type="button" class="guest-trigger" id="guest-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="guest-panel" aria-labelledby="guest-label guest-summary">
                 <span id="guest-summary">2 adultos</span>
                 <svg class="guest-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
@@ -406,7 +408,7 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L9.5 8.5 3 9.5 8 14.5 6.5 21 12 17.5 17.5 21 16 14.5 21 9.5 14.5 8.5z"/></svg>
                 </div>
                 <div>
-                  <h4 class="exp-title">Viento Spa & Hydrotherapy</h4>
+                  <h3 class="exp-title">Viento Spa & Hydrotherapy</h3>
                   <p class="exp-desc">Salas de massagem sobre as águas, rituais com óleos essenciais orgânicos locais e circuito completo de termas e hidroterapia.</p>
                 </div>
               </div>
@@ -416,7 +418,7 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
                 <div>
-                  <h4 class="exp-title">Catamarã Privativo ao Pôr do Sol</h4>
+                  <h3 class="exp-title">Catamarã Privativo ao Pôr do Sol</h3>
                   <p class="exp-desc">Navegação exclusiva pelas águas calmas com paradas para mergulho livre em recifes de corais preservados e open bar premium.</p>
                 </div>
               </div>
@@ -426,7 +428,7 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </div>
                 <div>
-                  <h4 class="exp-title">Jantar Romântico na Areia</h4>
+                  <h3 class="exp-title">Jantar Romântico na Areia</h3>
                   <p class="exp-desc">Mesa privativa à luz de velas sob o céu estrelado caribenho, com menu de 5 passos personalizado preparado pelo chef executivo.</p>
                 </div>
               </div>
@@ -593,7 +595,7 @@
       </div>
 
       <div class="footer-nav">
-        <h4>Navegação</h4>
+        <h2>Navegação</h2>
         <ul>
           <li><a href="#resort">O Resort</a></li>
           <li><a href="#acomodacoes">Suítes & Villas</a></li>
@@ -604,7 +606,7 @@
       </div>
 
       <div class="footer-legal">
-        <h4>Projeto Demonstrativo</h4>
+        <h2>Projeto Demonstrativo</h2>
         <p>Viento del Caribe é um resort fictício desenvolvido no MazyOS / Google Antigravity para simulação de site de alta conversão hoteleira.</p>
         <p class="copyright">© 2026 Viento del Caribe. Todos os direitos reservados.</p>
       </div>
@@ -620,28 +622,30 @@
   </div>
 
   <!-- ==================== MODAL DE PREVIEW DO WHATSAPP ==================== -->
-  <div class="modal-overlay" id="whatsapp-modal" aria-hidden="true">
-    <div class="modal-card">
+  <div class="modal-overlay" id="whatsapp-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-demo-note" aria-hidden="true">
+    <div class="modal-card" tabindex="-1">
       <button class="modal-close" id="modal-close" aria-label="Fechar modal">&times;</button>
       <div class="modal-header">
         <div class="modal-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.208.947 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.768-5.768-5.768zm7.391 5.767c0 4.077-3.314 7.391-7.391 7.391-1.309 0-2.53-.35-3.593-.967l-3.987 1.045 1.066-3.89c-.689-1.121-1.077-2.433-1.077-3.844 0-4.077 3.314-7.391 7.391-7.391 4.077 0 7.391 3.314 7.391 7.391z"/></svg>
         </div>
         <div>
-          <h3 class="modal-title">Mensagem Formatada para o Concierge</h3>
-          <span class="modal-subtitle">Pronta para envio direto via WhatsApp</span>
+          <h2 class="modal-title" id="modal-title">Preview da mensagem para o Concierge</h2>
+          <span class="modal-subtitle">Demonstração do fluxo de atendimento</span>
         </div>
       </div>
       <div class="modal-body">
-        <p class="modal-instruction">Confira como a mensagem pré-formatada será enviada ao atendimento oficial:</p>
+        <p class="modal-instruction">Confira como a mensagem seria preparada para o atendimento:</p>
         <div class="message-bubble" id="modal-message-text"></div>
+        <p class="modal-demo-note" id="modal-demo-note">Simulação de portfólio — nenhum contato será enviado.</p>
+        <span class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></span>
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline-secondary" id="btn-modal-cancel">Voltar</button>
-        <a href="#" id="btn-modal-confirm" target="_blank" class="btn btn-whatsapp">
-          <span>Abrir no WhatsApp</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-        </a>
+        <button type="button" id="btn-modal-confirm" class="btn btn-whatsapp">
+          <span>Copiar mensagem</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
       </div>
     </div>
   </div>
