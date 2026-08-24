@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viento del Caribe | Luxury Beach Resort & Spa — Punta Cana</title>
+  <meta name="description" content="Resort cinco estrelas de alto padrão em Punta Cana. Suítes exclusivas frente ao mar, alta gastronomia, spa e reservas diretas sem taxas.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER NAVEGAÇÃO ==================== -->
+  <header id="main-header" class="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="Viento del Caribe Home">
+        <span class="logo-name">VIENTO DEL CARIBE</span>
+        <span class="logo-type">LUXURY BEACH RESORT &amp; SPA</span>
+        <span class="logo-location">
+          <span class="logo-deco">—</span>
+          PUNTA CANA
+          <span class="logo-deco">—</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="#resort" class="nav-link">O Resort</a></li>
+          <li><a href="#beneficios" class="nav-link">Reserva Direta</a></li>
+          <li><a href="#acomodacoes" class="nav-link">Acomodações</a></li>
+          <li><a href="#gastronomia" class="nav-link">Gastronomia</a></li>
+          <li><a href="#spa" class="nav-link">Spa & Lazer</a></li>
+          <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#consulta" class="btn btn-primary btn-sm header-cta">
+          <span>Consultar disponibilidade</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu mobile" aria-controls="nav-menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="resort" class="hero-section">
+      <div class="hero-backdrop">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>PUNTA CANA • REPÚBLICA DOMINICANA</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Onde a serenidade caribenha encontra o luxo sem concessões.
+        </h1>
+        
+        <p class="hero-subtitle">
+          Uma coleção exclusiva de suítes e villas pé na areia, alta gastronomia internacional e atendimento de concierge privativo em uma praia preservada de Punta Cana.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#consulta" class="btn btn-gold btn-lg">
+            <span>Consultar disponibilidade</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#acomodacoes" class="btn btn-outline-light btn-lg">
+            <span>Explorar acomodações</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BARRA DE CONSULTA FLUTUANTE (BOOKING BAR) -->
+      <div id="consulta" class="container booking-bar-wrapper">
+        <div class="booking-bar-card">
+          <div class="booking-bar-header">
+            <div class="bar-tag">CANAL OFICIAL DE RESERVAS</div>
+            <span class="bar-guarantee">✓ Melhor tarifa garantida • Atendimento no WhatsApp</span>
+          </div>
+
+          <form id="booking-form" class="booking-form">
+            <div class="form-group">
+              <label for="checkin-date">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Check-in</span>
+              </label>
+              <input type="date" id="checkin-date" name="checkin" required>
+            </div>
+
+            <div class="form-group">
+              <label for="checkout-date">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Check-out</span>
+              </label>
+              <input type="date" id="checkout-date" name="checkout" required>
+            </div>
+
+            <!-- GUEST PICKER -->
+            <div class="form-group guest-picker-group" id="guest-picker-group">
+              <label>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Hóspedes</span>
+              </label>
+              <!-- Botão de resumo fechado -->
+              <button type="button" class="guest-trigger" id="guest-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="guest-panel">
+                <span id="guest-summary">2 adultos</span>
+                <svg class="guest-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <!-- Painel dropdown -->
+              <div class="guest-panel" id="guest-panel" role="dialog" aria-label="Selecionar hóspedes" aria-hidden="true">
+                <!-- Adultos -->
+                <div class="guest-row">
+                  <div class="guest-row-info">
+                    <span class="guest-row-label">Adultos</span>
+                    <span class="guest-row-sub">18 anos ou mais</span>
+                  </div>
+                  <div class="guest-counter">
+                    <button type="button" class="counter-btn" id="adults-minus" aria-label="Remover adulto">−</button>
+                    <span class="counter-value" id="adults-count">2</span>
+                    <button type="button" class="counter-btn" id="adults-plus" aria-label="Adicionar adulto">+</button>
+                  </div>
+                </div>
+                <!-- Crianças -->
+                <div class="guest-row">
+                  <div class="guest-row-info">
+                    <span class="guest-row-label">Menores</span>
+                    <span class="guest-row-sub">0 a 17 anos</span>
+                  </div>
+                  <div class="guest-counter">
+                    <button type="button" class="counter-btn" id="children-minus" aria-label="Remover criança">−</button>
+                    <span class="counter-value" id="children-count">0</span>
+                    <button type="button" class="counter-btn" id="children-plus" aria-label="Adicionar criança">+</button>
+                  </div>
+                </div>
+                <div class="guest-age-rules" aria-label="Faixas etárias">
+                  <span><strong>Crianças:</strong> 0 a 5 anos</span>
+                  <span><strong>Crianças:</strong> 6 a 12 anos</span>
+                  <span><strong>Adolescentes:</strong> 13 a 17 anos</span>
+                </div>
+                <!-- Idades das crianças -->
+                <div class="children-ages" id="children-ages"></div>
+                <!-- Confirmar -->
+                <button type="button" class="guest-confirm" id="guest-confirm">Concluir</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="suite-select">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Acomodação</span>
+              </label>
+              <select id="suite-select" name="suite">
+                <option value="Oceanfront Suite (75 m²)">Oceanfront Suite (75 m²)</option>
+                <option value="Private Pool Villa (140 m²)">Private Pool Villa (140 m²)</option>
+                <option value="Royal Penthouse (210 m²)">Royal Penthouse (210 m²)</option>
+                <option value="Qualquer acomodação disponível">Qualquer acomodação disponível</option>
+              </select>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-whatsapp btn-block" id="btn-submit-booking">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.208.947 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.768-5.768-5.768zm7.391 5.767c0 4.077-3.314 7.391-7.391 7.391-1.309 0-2.53-.35-3.593-.967l-3.987 1.045 1.066-3.89c-.689-1.121-1.077-2.433-1.077-3.844 0-4.077 3.314-7.391 7.391-7.391 4.077 0 7.391 3.314 7.391 7.391z"/></svg>
+                <span>Consultar no WhatsApp</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BENEFÍCIOS RESERVA DIRETA ==================== -->
+    <section id="beneficios" class="section direct-perks-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">RESERVA DIRETA & EXCLUSIVIDADE</span>
+          <h2 class="section-title">Por que planejar sua estadia diretamente conosco?</h2>
+          <p class="section-desc">
+            Ao planejar sua estadia diretamente pelo canal oficial do resort, você elimina intermediários, garante a melhor condição e desfruta de privilégios exclusivos.
+          </p>
+        </div>
+
+        <div class="perks-grid">
+          <div class="perk-card">
+            <div class="perk-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="perk-title">Melhor Tarifa Garantida</h3>
+            <p class="perk-text">Sem comissões ocultas de plataformas de terceiros. Garantimos a condição mais vantajosa para sua estadia.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="perk-title">Prioridade de Horário</h3>
+            <p class="perk-text">Aproveite mais tempo no paraíso com prioridade para early check-in e late check-out mediante disponibilidade.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 22h8M12 11v11M5 3h14l-2 8H7L5 3z"/></svg>
+            </div>
+            <h3 class="perk-title">Welcome Drink & Amenity</h3>
+            <p class="perk-text">Brinde especial assinado por nosso sommelier na chegada e mimos artesanais frescos no quarto.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L9.5 8.5 3 9.5 8 14.5 6.5 21 12 17.5 17.5 21 16 14.5 21 9.5 14.5 8.5z"/></svg>
+            </div>
+            <h3 class="perk-title">Crédito USD 50 no Spa</h3>
+            <p class="perk-text">Cortesia por acomodação para vivenciar massagens holísticas e rituais relaxantes no Viento Spa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ACOMODAÇÕES ==================== -->
+    <section id="acomodacoes" class="section suites-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="header-left">
+            <span class="section-eyebrow">REFÚGIOS PRIVATIVOS</span>
+            <h2 class="section-title">Espaços desenhados para o descanso absoluto.</h2>
+          </div>
+          <p class="section-desc">
+            Cada suíte combina arquitetura contemporânea caribenha, materiais nobres e a vista infinita das águas cristalinas de Punta Cana.
+          </p>
+        </div>
+
+        <div class="suites-grid">
+          <!-- SUITE 1 -->
+          <article class="suite-card" data-suite-name="Oceanfront Suite (75 m²)">
+            <div class="suite-image-wrap">
+              <div class="suite-image oceanfront-img"></div>
+              <span class="suite-tag">FRENTE AO MAR</span>
+            </div>
+            <div class="suite-content">
+              <div class="suite-meta">
+                <span class="meta-item">75 m²</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Até 2 Hóspedes</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Cama King Size</span>
+              </div>
+              <h3 class="suite-title">Oceanfront Suite</h3>
+              <p class="suite-desc">
+                Desperte com o som suave das ondas. Varanda panorâmica privativa com daybed, lençóis de algodão egípcio e banheiro em mármore com banheira de imersão.
+              </p>
+              <ul class="suite-features">
+                <li>✓ Vista frontal ininterrupta do mar</li>
+                <li>✓ Banheira de imersão & ducha dupla</li>
+                <li>✓ Varanda privativa com daybed</li>
+                <li>✓ Máquina Nespresso & adega de apoio</li>
+              </ul>
+              <div class="suite-footer">
+                <button class="btn btn-outline-primary btn-block btn-suite-book" data-suite="Oceanfront Suite (75 m²)">
+                  <span>Consultar disponibilidade</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUITE 2 -->
+          <article class="suite-card featured-suite" data-suite-name="Private Pool Villa (140 m²)">
+            <div class="suite-image-wrap">
+              <div class="suite-image villa-img"></div>
+              <span class="suite-tag tag-gold">MÁXIMA PRIVACIDADE</span>
+            </div>
+            <div class="suite-content">
+              <div class="suite-meta">
+                <span class="meta-item">140 m²</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Até 4 Hóspedes</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Piscina Privativa</span>
+              </div>
+              <h3 class="suite-title">Private Pool Villa</h3>
+              <p class="suite-desc">
+                Seu santuário particular. Villa isolada cercada por jardins tropicais nativos, deck privativo de madeira com piscina de borda infinita e acesso direto à areia.
+              </p>
+              <ul class="suite-features">
+                <li>✓ Piscina privativa de borda infinita</li>
+                <li>✓ Deck de madeira com espreguiçadeiras</li>
+                <li>✓ Acesso privativo e direto à praia</li>
+                <li>✓ Serviço de mordomo dedicado</li>
+              </ul>
+              <div class="suite-footer">
+                <button class="btn btn-gold btn-block btn-suite-book" data-suite="Private Pool Villa (140 m²)">
+                  <span>Consultar disponibilidade</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SUITE 3 -->
+          <article class="suite-card" data-suite-name="Royal Penthouse (210 m²)">
+            <div class="suite-image-wrap">
+              <div class="suite-image penthouse-img"></div>
+              <span class="suite-tag">EXPERIÊNCIA SUPREMA</span>
+            </div>
+            <div class="suite-content">
+              <div class="suite-meta">
+                <span class="meta-item">210 m²</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Até 4 Hóspedes</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">Rooftop 360°</span>
+              </div>
+              <h3 class="suite-title">Royal Penthouse</h3>
+              <p class="suite-desc">
+                O ápice da sofisticação. Cobertura com terraço rooftop privativo de 360°, jacuzzi aquecida sob as estrelas, sala de estar integrada e atendimento de concierge VIP 24h.
+              </p>
+              <ul class="suite-features">
+                <li>✓ Terraço rooftop privativo com jacuzzi</li>
+                <li>✓ Vista panorâmica de 360° para a costa</li>
+                <li>✓ Sala de estar ampla & adega climatizada</li>
+                <li>✓ Concierge VIP 24h & transfer executivo</li>
+              </ul>
+              <div class="suite-footer">
+                <button class="btn btn-outline-primary btn-block btn-suite-book" data-suite="Royal Penthouse (210 m²)">
+                  <span>Consultar disponibilidade</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GASTRONOMIA & BEACH CLUB ==================== -->
+    <section id="gastronomia" class="section dining-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">SABORES DE AUTOR</span>
+          <h2 class="section-title">Uma celebração culinária inspirada no oceano.</h2>
+          <p class="section-desc">
+            Três conceitos gastronômicos distintos que combinam os ingredientes mais nobres do Caribe com técnicas consagradas da cozinha internacional.
+          </p>
+        </div>
+
+        <div class="dining-grid">
+          <div class="dining-card">
+            <div class="dining-visual aura-img"></div>
+            <div class="dining-info">
+              <span class="dining-badge">ALTA GASTRONOMIA</span>
+              <h3 class="dining-name">Aura Restaurant</h3>
+              <p class="dining-text">Culinária mediterrânea contemporânea e pescados frescos trazidos no mesmo dia, harmonizados com uma premiada carta de vinhos de mais de 400 rótulos.</p>
+            </div>
+          </div>
+
+          <div class="dining-card">
+            <div class="dining-visual fuego-img"></div>
+            <div class="dining-info">
+              <span class="dining-badge">GRILL AO AR LIVRE</span>
+              <h3 class="dining-name">Fuego & Brasa</h3>
+              <p class="dining-text">Cortes nobres e frutos do mar preparados na brasa aberta com toques de especiarias locais e vista deslumbrante para o pôr do sol caribenho.</p>
+            </div>
+          </div>
+
+          <div class="dining-card">
+            <div class="dining-visual beachclub-img"></div>
+            <div class="dining-info">
+              <span class="dining-badge">BEACH CLUB & LOUNGE</span>
+              <h3 class="dining-name">Viento Beach Lounge</h3>
+              <p class="dining-text">Coquetelaria artesanal, pequenos pratos sofisticados e música suave em cabanas privativas com serviço de praia exclusivo e pés na areia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WELLNESS & EXPERIÊNCIAS ==================== -->
+    <section id="spa" class="section wellness-section">
+      <div class="container">
+        <div class="wellness-layout">
+          <div class="wellness-text-col">
+            <span class="section-eyebrow">BEM-ESTAR & EXPERIÊNCIAS</span>
+            <h2 class="section-title">Rituais de relaxamento e memórias inesquecíveis.</h2>
+            <p class="wellness-lead">
+              Nossas experiências foram desenhadas para renovar o corpo e proporcionar momentos autênticos em contato com a natureza exuberante de Punta Cana.
+            </p>
+
+            <div class="experience-list">
+              <div class="exp-item">
+                <div class="exp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L9.5 8.5 3 9.5 8 14.5 6.5 21 12 17.5 17.5 21 16 14.5 21 9.5 14.5 8.5z"/></svg>
+                </div>
+                <div>
+                  <h4 class="exp-title">Viento Spa & Hydrotherapy</h4>
+                  <p class="exp-desc">Salas de massagem sobre as águas, rituais com óleos essenciais orgânicos locais e circuito completo de termas e hidroterapia.</p>
+                </div>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                  <h4 class="exp-title">Catamarã Privativo ao Pôr do Sol</h4>
+                  <p class="exp-desc">Navegação exclusiva pelas águas calmas com paradas para mergulho livre em recifes de corais preservados e open bar premium.</p>
+                </div>
+              </div>
+
+              <div class="exp-item">
+                <div class="exp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div>
+                  <h4 class="exp-title">Jantar Romântico na Areia</h4>
+                  <p class="exp-desc">Mesa privativa à luz de velas sob o céu estrelado caribenho, com menu de 5 passos personalizado preparado pelo chef executivo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="wellness-cta">
+              <a href="#consulta" class="btn btn-primary">
+                <span>Agendar com o Concierge no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="wellness-visual-col">
+            <div class="wellness-mosaic">
+              <div class="mosaic-img mosaic-1 spa-img"></div>
+              <div class="mosaic-img mosaic-2 catamaran-img"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== AVALIAÇÕES (PROVA SOCIAL) ==================== -->
+    <section id="avaliacoes" class="section reviews-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">EXPERIÊNCIAS REAIS • CONTEÚDO DEMONSTRATIVO</span>
+          <h2 class="section-title">A hospitalidade que encanta hóspedes do mundo todo.</h2>
+          <div class="rating-badge">
+            <div class="stars">★★★★★</div>
+            <span><strong>4.9 de 5 estrelas</strong> em excelência, privacidade e gastronomia</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "A atenção aos detalhes desde o momento em que entramos em contato pelo WhatsApp até o nosso último dia foi impecável. A villa com piscina é um refúgio de paz indescritível."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar avatar-1">SM</div>
+              <div class="author-info">
+                <span class="author-name">Sofia & Matteo B.</span>
+                <span class="author-location">Milão, Itália</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card featured-review">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Reservar direto nos garantiu um atendimento super acolhedor do concierge e um upgrade maravilhoso. O Viento del Caribe redefiniu nosso padrão de férias no Caribe."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar avatar-2">CH</div>
+              <div class="author-info">
+                <span class="author-name">Carlos & Helena M.</span>
+                <span class="author-location">São Paulo, Brasil</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "A praia privativa é de uma tranquilidade impressionante e a gastronomia do restaurante Aura é divina. Mal podemos esperar para retornar no próximo ano."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar avatar-3">DJ</div>
+              <div class="author-info">
+                <span class="author-name">David & Jennifer R.</span>
+                <span class="author-location">Nova York, EUA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="section faq-section">
+      <div class="container faq-container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">ESCLARECIMENTOS</span>
+          <h2 class="section-title">Perguntas frequentes sobre sua estadia</h2>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion">
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>Como funciona a consulta de disponibilidade pelo WhatsApp?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Ao clicar em "Consultar disponibilidade", você será direcionado para uma conversa direta com nossa equipe de concierge. Informaremos os valores exatos para as datas desejadas, opções de acomodação e todos os benefícios exclusivos da reserva direta.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>O resort oferece serviço de transfer a partir do aeroporto?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Oferecemos serviço de transfer privativo em veículos executivos climatizados a partir do Aeroporto Internacional de Punta Cana (PUJ), localizado a apenas 20 minutos de distância.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quais são os horários de check-in e check-out?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>O check-in padrão é realizado a partir das 15:00 e o check-out até as 12:00. Hóspedes com reserva direta possuem prioridade para early check-in e late check-out mediante disponibilidade no dia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>O resort aceita crianças e famílias?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, recebemos famílias com muito carinho. Nossas Private Pool Villas e suítes amplas oferecem excelente conforto, privacidade e estrutura completa para estadias com crianças.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="section final-cta-section">
+      <div class="container">
+        <div class="final-cta-card">
+          <span class="cta-eyebrow">SEU REFÚGIO NO CARIBE</span>
+          <h2 class="cta-title">Pronto para viver o Caribe em sua forma mais autêntica e luxuosa?</h2>
+          <p class="cta-desc">
+            Inicie uma conversa sem compromisso com nosso concierge no WhatsApp. Planejamos cada detalhe de sua estadia com tarifas exclusivas e atendimento prioritário.
+          </p>
+          <div class="cta-action">
+            <a href="#consulta" class="btn btn-whatsapp btn-lg">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.208.947 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.768-5.768-5.768zm7.391 5.767c0 4.077-3.314 7.391-7.391 7.391-1.309 0-2.53-.35-3.593-.967l-3.987 1.045 1.066-3.89c-.689-1.121-1.077-2.433-1.077-3.844 0-4.077 3.314-7.391 7.391-7.391 4.077 0 7.391 3.314 7.391 7.391z"/></svg>
+              <span>Consultar disponibilidade no WhatsApp</span>
+            </a>
+          </div>
+          <span class="cta-microcopy">✓ Atendimento imediato • Sem taxas de intermediação</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo-title">VIENTO DEL CARIBE</span>
+        <span class="footer-logo-sub">LUXURY BEACH RESORT & SPA</span>
+        <p class="footer-address">
+          Praia de Bavaro, Punta Cana, República Dominicana<br>
+          Atendimento: +1 (809) 555-0199 • concierge@vientodelcaribe.com
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#resort">O Resort</a></li>
+          <li><a href="#acomodacoes">Suítes & Villas</a></li>
+          <li><a href="#beneficios">Vantagens Diretas</a></li>
+          <li><a href="#gastronomia">Gastronomia</a></li>
+          <li><a href="#spa">Spa & Bem-estar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h4>Projeto Demonstrativo</h4>
+        <p>Viento del Caribe é um resort fictício desenvolvido no MazyOS / Google Antigravity para simulação de site de alta conversão hoteleira.</p>
+        <p class="copyright">© 2026 Viento del Caribe. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOTÃO FLUTUANTE DE WHATSAPP ==================== -->
+  <div class="whatsapp-floating" id="whatsapp-float">
+    <a href="#consulta" class="whatsapp-btn" id="btn-whatsapp-floating" aria-label="Falar com Concierge no WhatsApp">
+      <span class="whatsapp-tooltip">Consultar disponibilidade</span>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.208.947 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.768-5.768-5.768zm7.391 5.767c0 4.077-3.314 7.391-7.391 7.391-1.309 0-2.53-.35-3.593-.967l-3.987 1.045 1.066-3.89c-.689-1.121-1.077-2.433-1.077-3.844 0-4.077 3.314-7.391 7.391-7.391 4.077 0 7.391 3.314 7.391 7.391z"/></svg>
+    </a>
+  </div>
+
+  <!-- ==================== MODAL DE PREVIEW DO WHATSAPP ==================== -->
+  <div class="modal-overlay" id="whatsapp-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Fechar modal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.208.947 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.768-5.768-5.768zm7.391 5.767c0 4.077-3.314 7.391-7.391 7.391-1.309 0-2.53-.35-3.593-.967l-3.987 1.045 1.066-3.89c-.689-1.121-1.077-2.433-1.077-3.844 0-4.077 3.314-7.391 7.391-7.391 4.077 0 7.391 3.314 7.391 7.391z"/></svg>
+        </div>
+        <div>
+          <h3 class="modal-title">Mensagem Formatada para o Concierge</h3>
+          <span class="modal-subtitle">Pronta para envio direto via WhatsApp</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-instruction">Confira como a mensagem pré-formatada será enviada ao atendimento oficial:</p>
+        <div class="message-bubble" id="modal-message-text"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" id="btn-modal-cancel">Voltar</button>
+        <a href="#" id="btn-modal-confirm" target="_blank" class="btn btn-whatsapp">
+          <span>Abrir no WhatsApp</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
